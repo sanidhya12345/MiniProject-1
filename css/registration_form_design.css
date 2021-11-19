@@ -1,0 +1,142 @@
+/** @format */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../img/div_image.jpg");
+  background-size: cover;
+}
+img {
+  vertical-align: middle;
+  height: 680px;
+}
+.container {
+  width: 73%;
+  height: 700px;
+  background-image: url("../img/login_back.jpg");
+  margin: auto;
+  margin-top: 100px;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-name: slideInLeft;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+input {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 79%;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+label {
+  text-align: left;
+}
+.imgcontainer .avatar {
+  width: 100px;
+  height: 100px;
+  margin-top: 5px;
+}
+.signup {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 20px;
+}
+h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 22px;
+  color: #ffffff;
+}
+h5 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+  color: #ffffff;
+}
+.signup-details {
+  float: left;
+  width: 45%;
+  height: 680px;
+}
+.div-image {
+  height: 680px;
+  float: right;
+  width: 55%;
+  background-color: white;
+  position: relative;
+  margin: auto;
+}
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
