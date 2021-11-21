@@ -110,7 +110,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     writeNewUser(uid, displayName, email, emailVerified);
     //window.location.href ='index.html';
   }else {
-    window.location.href ='index.html';
+    window.location.href ='../index.html';
   }
 
 

@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       signUp.style.display = 'none';
 
   }else {
-    user_info.innerHTML = 'Hello, Sign in';
+    user_info.innerHTML = 'Sign in';
     settings.style.display = 'none';
     logout.style.display = 'none';
     login.style.display = 'block';

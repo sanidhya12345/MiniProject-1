@@ -9,6 +9,6 @@ function writeNewUser(userID, displayname, email, emailVerified){
     email:email,
     emailVerified: emailVerified
   }).then( e => {
-    window.location.href ='index.html';
+    window.location.href ='../index.html';
   });
 }
