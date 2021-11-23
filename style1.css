@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
 
 @font-face {
-  font-family: "Booter - Zero Zero";
+  font-family: "Poppins", sans-serif;
   src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
     url("Fonts/Booter - Zero Zero.woff2") format("woff2");
   font-weight: normal;
@@ -11,7 +11,6 @@
 
 * {
   box-sizing: border-box;
-  font-family: Raleway;
   color: #777;
 }
 
@@ -20,57 +19,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-}
-
-.nav ul {
-  margin: 0;
-}
-
-.nav li {
-  display: inline;
-}
-
-.nav a {
-  display: inline-block;
-  padding: 0.5em;
-  color: white;
-  text-decoration: none;
-}
-
-.main-nav {
-  text-align: center;
-  font-size: 1.1em;
-  font-weight: lighter;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.main-nav li {
-  padding: 0 5%;
-}
-
-.nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.main-header {
-  background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("Images/Header Background.jpg");
-  background-blend-mode: multiply;
-  background-size: cover;
-  padding-bottom: 30px;
-}
-
-.band-name {
-  text-align: center;
-  margin: 0;
-  font-size: 4em;
-  font-family: "Booter - Zero Zero";
-  font-weight: normal;
-  color: white;
-}
-
-.band-name-large {
-  font-size: 8em;
 }
 
 .content-section {
@@ -83,8 +31,8 @@ body {
   padding: 0 1.5em;
 }
 .section-header {
-  font-family: "Metal Mania";
-  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
   color: #333;
   text-align: center;
   font-size: 2.5em;
@@ -98,42 +46,17 @@ body {
   border-radius: 50%;
 }
 
-.main-footer {
-  background-color: #56ccf2;
-  color: white;
-  padding: 0.25em 0;
-}
-
-.main-footer-container {
-  display: flex;
-  align-items: center;
-}
-
-.main-footer-container ul {
-  flex-grow: 1;
-  text-align: end;
-}
-
-.footer-nav li {
-  padding: 0 0.5em;
-}
-
-.footer-nav img {
-  width: 30px;
-  height: 30px;
-}
-
 .btn {
   text-align: center;
   vertical-align: middle;
-  padding: 0.67em 0.67em;
+  padding: 2px 5px;
   cursor: pointer;
 }
 
 .btn-header {
   margin: 0.5em 15% 2em 15%;
   color: white;
-  border: 2px solid #2d9cdb;
+  border: 2px solid #fb774b;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0;
   font-size: 1.5em;
@@ -146,65 +69,26 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.btn-play {
-  display: block;
-  margin: 0 auto;
-  color: #2d9cdb;
-  font-size: 4em;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  padding: 0;
-  text-align: center;
-}
-
 .btn-primary {
-  color: white;
-  background-color: #56ccf2;
+  background: #fb774b;
+  transform: translateY(0px);
+  transform: scale(1);
+  transition: 0.3s all;
   border: none;
-  border-radius: 0.3em;
   font-weight: bold;
+  border-radius: 0.1em;
+  box-shadow: 1px 1px 4px black;
 }
 
 .btn-primary:hover {
-  background-color: #2d9cdb;
-}
-
-.tour-row {
-  border-bottom: 1px solid black;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
-
-.tour-row:last-child {
+  transform: translateY(0px);
+  transform: scale(1.1);
+  background: #f06435;
   border: none;
 }
 
-.tour-item {
-  display: inline-block;
-  padding-right: 0.5em;
-}
-
-.tour-date {
-  color: #555;
-  width: 11%;
-  font-weight: bold;
-}
-
-.tour-city {
-  width: 24%;
-}
-
-.tour-arena {
-  width: 42%;
-}
-
-.tour-btn {
-  max-width: 19%;
-}
-
 .shop-item {
-  margin: 30px;
+  margin: 20px;
 }
 
 .shop-item-title {
@@ -220,6 +104,7 @@ body {
 .shop-item-image {
   height: 250px;
   width: 250px;
+  box-shadow: 0.5px 0.5px 1px grey;
 }
 
 .shop-item-details {
@@ -287,19 +172,19 @@ body {
   color: white;
   background-color: #eb5757;
   border: none;
-  border-radius: 0.3em;
+  border-radius: 0.1em;
+  padding: 6px 10px;
   font-weight: bold;
 }
 
 .btn-danger:hover {
   background-color: #cc4c4c;
+  color: whitesmoke;
 }
 
 .cart-quantity-input {
   height: 34px;
   width: 50px;
-  border-radius: 5px;
-  border: 1px solid #56ccf2;
   background-color: #eee;
   color: #333;
   padding: 0;
@@ -338,4 +223,5 @@ body {
   display: block;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
+  padding: 10px 15px;
 }
