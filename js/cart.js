@@ -47,17 +47,37 @@ function quantityChanged(event) {
         input.value = 1
     }
     updateCartTotal()
-    
+
 }
 
 function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    addItemToCart(title, price, imageSrc)
-    updateCartTotal()
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            //user logs in
+            user_info.innerHTML = user.email;
+            settings.style.display = 'block';
+            logout.style.display = 'block';
+            login.style.display = 'none';
+            signUp.style.display = 'none';
+            var button = event.target
+            var shopItem = button.parentElement.parentElement
+            var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+            var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+            var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+            addItemToCart(title, price, imageSrc)
+            updateCartTotal()
+
+        } else {
+            user_info.innerHTML = 'Sign in';
+            settings.style.display = 'none';
+            logout.style.display = 'none';
+            login.style.display = 'block';
+            signUp.style.display = 'block';
+            alert("please login before adding items to the cart...");
+            //user logs out
+        }
+    });
+
 }
 
 function addItemToCart(title, price, imageSrc) {
@@ -119,5 +139,5 @@ function updateProductTotal() {
         total = Math.round(total * 100) / 100
         document.getElementsByClassName('cart-amount cart-column')[0].innerText = '$' + total
     }
-   
+
 }
