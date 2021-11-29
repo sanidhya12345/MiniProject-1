@@ -18,28 +18,173 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
   <!-- Add additional services that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../style1.css">
-    <script src="../js/cart.js" async></script>
     <style>
-        .product {
-            width:100%;
-            height: auto;
-            box-sizing: border-box;
-            object-fit: cover;
-        }
+      .about-us {
+        margin-top: 150px;
+      }
 
-        #featured>div.row.mx-auto.container>nav>ul>li.page-item.active>a {
-            background-color: black ;
-        }
-        #featured>div.row.mx-auto.container>nav>ul>li:nth-child(n):hover>a{
-            background-color: coral;
-            color: #fff;
-        }
-        .pagination a {
-            color: #000;
-        }
+      /*  CONTACT US PAGE CSS*/
+
+.contact{
+    position: relative;
+    margin-top: 75px;
+    padding: 50px 100px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    background-size: cover;
+}
+
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h1{
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: white;
+}
+
+.contact .content p{
+    font-weight: 300;
+    color: #dddd;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container2 .contact-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container2 .contact-info .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container2 .contact-info .box .icon{
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+} 
+
+.container2 .contact-info .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: white;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container2 .contact-info .box .text h2{
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #00bcd4;
+}
+
+.contact-form{
+    width: 40%;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+}
+
+.contact-form h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.contact-form .input-box{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #3333;
+    outline: none;
+    resize: none;
+}
+
+.contact-form .input-box span{
+    position: absolute;
+    left: 0; 
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none; 
+    transition: 0.3s;
+    color: #666;
+}
+
+.contact-form .input-box input:focus ~ span,
+.contact-form .input-box input:valid ~ span,
+.contact-form .input-box textarea:focus ~ span,
+.contact-form .input-box textarea:valid ~span{
+    transform: translateY(-20px);
+}
+
+.contact-form .input-box input[type = "button"]{
+    width: 100%;
+    background: linear-gradient(to right, #82dcff, #e584fc);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    font-size: x-large;
+    padding: 10px;
+}
+
+@media (max-width: 950px){
+    .contact{
+        padding: 50px;
+    }
+
+    .container2{
+        flex-direction: column;
+    }
+
+    .container2 .contact-info{
+        margin-bottom: 40px;
+    }
+
+    .container2 .contact-info,
+    .contact-form{
+        width: 100%;
+    }
+}
     </style>
+    <script src="../js/cart.js" async></script>
 </head>
 <body>
     <!--navigation bar-->
@@ -79,66 +224,193 @@
     </div>
   </nav>
 
-  <div class="about-section" style="padding-top: 100px;">
-    <h1>Contact Us</h1>
-  </div>
-  
-  <h2 style="text-align:center">Our Team</h2>
-  <div class="row">
-    <div class="column">
+  <!--About Us-->
+  <section class="about-us container">
+    <h3>Our Team</h3>
+    <hr>
+    <div class="card-deck">
       <div class="card">
-        <img src="Images/ravi.jpeg" alt="Jane" style="width:100%">
-        <div class="container">
-          <h2>Ravi Varshney</h2>
-          <p class="title">Co-Founder</p>
-          <p>FrontEnd and Designing.</p>
-          <p>ravi.varshney_cs19@gla.ac.in</p>
-          <p><a href="mailto:ravi.varshney_cs19@gla.ac.in" class="button" style="text-decoration: none;
-            color: whitesmoke;">Contact</a></p>
+        <img class="card-img-top" src="./Images/sanu.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Sanidhya Varshney</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <a href="https://www.linkedin.com/in/sanidhya-varshney-33489b190/" class="btn btn-danger">Follow</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../img/WhatsApp Image 2021-11-29 at 19..jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Ravi Varshney</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <a href="ithub.com/ravivarshney2000" class="btn btn-danger">Follow</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../img/WhatsApp Image 2021-11-28 at 20.10.24 (1).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Mayank Shrivastava</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <a href="https://www.linkedin.com/in/mayank-shrivastava-5687801b3/" class="btn btn-danger">Follow</a>
         </div>
       </div>
     </div>
-  
-    <div class="column">
-      <div class="card">
-        <img src="Images/sanu.jpg" alt="Mike" style="width:100%">
-        <div class="container">
-          <h2>Sanidhya Varshney</h2>
-          <p class="title">Co-Founder</p>
-          <p>Back End.</p>
-          <p>sanidhya.varshney_cs19@gla.ac.in</p>
-          <p><a href="mailto:sanidhya.varshney_cs19@gla.ac.in" class="button" style="text-decoration: none;
-            color: whitesmoke;">Contact</a></p>
+  </section>
+
+
+  <section class="contact">
+    <div class="content">
+        <h1>Contact us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates commodi aliquam sequi
+            enim
+            deleniti numquam autem quod. Laboriosam vel at soluta facilis sunt fugiat sapiente reprehenderit</p>
+    </div>
+    <div class="container2">
+        <div class="contact-info">
+            <div class="box">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="text">
+                    <h2>Address</h2>
+                    <p>H BLOCK HOSTEL, GLA UNIVERSITY</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="text">
+                    <h2>Phone</h2>
+                    <p>+7078221599</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="far fa-envelope"></i></div>
+                <div class="text">
+                    <h2>Email</h2>
+                    <p>mayank.shrivastava_cs19@gla.ac.in</p>
+                </div>
+            </div>
         </div>
+        <div class="contact-form">
+            <form action="" method="POST">
+                <h2>Get In Touch</h2>
+                <div class="input-box">
+                    <input type="text" name="" class="name" required>
+                    <span>Full Name</span>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="" class="email" required>
+                    <span>Email</span>
+                </div>
+                <div class="input-box">
+                    <textarea class="message" required></textarea>
+                    <span>Your message</span>
+                </div>
+                <div class="input-box">
+                    <input type="button" value="Submit" onclick="handleSubmit()">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+ <!--Footer section-->
+ <footer class="mt-5 py-5" id="foot">
+  <div class="row container mx-auto pt-5">
+    <div class="footer-one col-lg-3 col-md-6 col-12">
+      <h3>Shopping Cart</h3>
+      <p class="pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate beatae
+        assumenda nobis fugiat nihil cum fugit reprehenderit maxime </p>
+
+    </div>
+    <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+      <h5 class="pb-2">Features</h5>
+      <ul class="text-uppercase list-unstyled">
+        
+        
+        <li><a href="./pages/shop.html#3">watches</a></li>
+        <li><a href="./pages/shop.html#4">smart phones</a></li>
+        <li><a href="./pages/shop.html#1">new arrivals</a></li>
+        <li><a href="./pages/shop.html#2">shoes</a></li>
+        <li><a href="./pages/shop.html#1">clothes</a></li>
+      </ul>
+    </div>
+    <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+      <h5 class="pb-2">Contact Us</h5>
+      <div>
+        <h6 class="text-uppercase">Address</h6>
+        <p>GLA University,Mathura</p>
+      </div>
+      <div>
+        <h6 class="text-uppercase">Phone</h6>
+        <p>7078221599</p>
+      </div>
+      <div>
+        <h6 class="text-uppercase">Email</h6>
+        <p>Mail@gmail.com</p>
       </div>
     </div>
-  
-    <div class="column">
-      <div class="card">
-        <img src="Images/mayank1.jpg" alt="John" style="width:100%">
-        <div class="container">
-          <h2>Mayank Shrivastava</h2>
-          <p class="title">Co-Founder</p>
-          <p>FrontEnd and Designing.</p>
-          <p>mayank.shrivastava_cs19@gla.ac.in</p>
-          <p><a href="mailto:mayank.shrivastava_cs19@gla.ac.in" class="button" style="text-decoration: none;
-            color: whitesmoke;">Contact</a></p>
-        </div>
+    <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+      <h5 class="pb-2">Instagram</h5>
+      <div class="row">
+        <img class="img-fluid w-25 h-100 m-2" src="../img/insta/1.jpg" alt="">
+        <img class="img-fluid w-25 h-100 m-2" src="../img/insta/2.jpg" alt="">
+        <img class="img-fluid w-25 h-100 m-2" src="../img/insta/3.jpg" alt="">
+        <img class="img-fluid w-25 h-100 m-2" src="../img/insta/4.jpg" alt="">
+        <img class="img-fluid w-25 h-100 m-2" src="../img/insta/5.jpg" alt="">
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  <div class="copyright mt-5">
+    <div class="row container mx-auto">
+      <div class="col-lg-3 col-md-6 col-12 mb-4">
+        <img src="../img/payment.png" alt="">
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 text-nowrap">
+        <p>Cart eCommerce@ 2021. All Rights Reserved</p>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+   function handleSubmit() {
+      // console.log("function called");
+        sendMailToClient();
+    }
+    function sendMailToClient() {
+                var name = document.querySelector(".name").value;
+                var email = document.querySelector(".email").value;
+                var message = document.querySelector(".message").value;
+                Email.send({
+                    // SecureToken:  "7843f900-6b48-463a-8bfd-35a702fab679", // temporary token
+                    To: email,
+                    From: "shoppingCart@gmail.com",
+                    Subject: "Greeting from shopping cart",
+                    Body: "Thank you for connecting with us. Our team will be soon contacting you."
+                }).then(
+                    message => alert("Thank you connecting with us. Our team will contact you soon")
+                );
+
+                document.querySelector(".name").value = "";
+                document.querySelector(".email").value = "";
+                document.querySelector(".message").value = "";
+            }
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
   integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
   crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
   integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
   crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
-  <script src='../js/firebaseConfig.js'></script>
-  <script src='../js/database.js'></script>
-  <script src='../js/userInfo.js'></script>
-  <script src='../js/URLparams.js'></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
+<script src='./js/firebaseConfig.js'></script>
+<script src='./js/database.js'></script>
+<script src='./js/userInfo.js'></script>
+<script src='./js/URLparams.js'></script>
+
 </body>
 </html>
